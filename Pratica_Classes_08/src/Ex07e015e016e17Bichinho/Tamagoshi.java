@@ -1,11 +1,11 @@
-package Exo7Bichinho;
+package Ex07e015e016e17Bichinho;
 
 public class Tamagoshi {
 
     private String nome;
     private int fome;
     private int saude;
-    private int idade;
+    private int idade;  
 
     public Tamagoshi(String nome, int fome, int saude, int idade) {
         this.nome = nome;
@@ -46,6 +46,21 @@ public class Tamagoshi {
         return this.idade;
     }
 
+   public void alimentar(double qtdComida){
+    this.saude -= qtdComida;
+    if (this.fome < 0) {
+            this.fome = 0;
+        }   
+   }
+   
+   public void brincar(int tempoBrincadeira) {
+        this.saude += tempoBrincadeira;
+        if (this.saude > 100) {
+            this.saude = 100;
+        }
+    }
+   
+   
     public String calcularHumor() {
         int humor = this.fome + this.saude;
 
@@ -61,7 +76,9 @@ public class Tamagoshi {
             return "Muito feliz";
         }
 
-        return " ";
+        return "";
     }
+    public String toString() {
+        return "Nome: " + this.nome + "\nFome: " + this.fome + "\nSaúde: " + this.saude + "\nIdade: " + this.idade;
 }
-
+}
